@@ -30,12 +30,12 @@ function outputType($value) {
 }
 
 
-// $variable = 3.14;
+$variable = 3.14;
 // $variable = 3;
 // $variable = 'one';
 // $variable = true;
 // $variable = null;
-$variable = [];
+// $variable = [];
 
 echo  "type is " . outputType($variable);
 
