@@ -4,11 +4,12 @@ $resultForIf = NULL;
 $resultForSwitch = NULL;
 
 // $variable = true;
-// $variable = 3.14;
+$variable = 3.14;
 // $variable = 3;
 // $variable = 'one';
-$variable = null;
+// $variable = null;
 // $variable = [];
+
 
 if (is_bool($variable)) {
     $resultForIf = 'bool';
@@ -27,13 +28,8 @@ if (is_bool($variable)) {
 echo  "type is " . $resultForIf . PHP_EOL;
 
 
-switch ($variable) {
-    case is_null($variable) === 1 && !isset($variable):
-        echo "enter is_null" . PHP_EOL;
-        $resultForSwitch = 'null';
-        break;
+switch (true) {
     case is_bool($variable):
-        echo "enter is_bool" . PHP_EOL;
         $resultForSwitch = 'bool';
         break;
     case is_float($variable):
@@ -45,19 +41,13 @@ switch ($variable) {
     case is_string($variable):
         $resultForSwitch = 'string';
         break;
+    case is_null($variable):
+        $resultForSwitch = 'null';
+        break;
     default:
         $resultForSwitch = 'other';
 }
 
-// switch ($variable) {
-//     case is_bool($variable) || gettype($variable) !== NULL:
-//         echo "enter is_bool" . PHP_EOL;
-//         $resultForSwitch = 'bool';
-//         break;
-// }
-
 echo  "type is " . $resultForSwitch . PHP_EOL;
 
-var_dump("gettype>>>" . strval(gettype($variable)) . " / isset>>>" . isset($variable) . " / is_null>>>" . is_null($variable)) . PHP_EOL;
-var_dump(gettype($variable) === "NULL");
 ?>
